@@ -104,3 +104,5 @@ def rms_norm_fwd_nobias_inf(
         x = tl.load(X + cols, mask=mask, other=0.).to(tl.bfloat16)
         y = (x * inv_rms) * w
         tl.store(Y + cols, y, mask=mask)
+
+# TODO: ADD FUSED ROPE KERNELS
